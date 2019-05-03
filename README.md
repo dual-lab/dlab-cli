@@ -2,7 +2,7 @@
 
 Git-Lab CI/CD |
 :---: |
-Unkwon|
+[![pipeline status](https://gitlab.com/dual-lab/cli/dlab-cli/badges/master/pipeline.svg)](https://gitlab.com/dual-lab/cli/dlab-cli/commits/master)|
 
 Utility cli used to build and initialize my node-js and ux internal projects.
 
