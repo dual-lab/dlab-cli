@@ -12,11 +12,11 @@ This is a monolithic repo.
 
 ## Install
 
-W.I.P
+See [wiki](https://gitlab.com/dual-lab/cli/dlab-cli/wikis/home)
 
 ## Usage
 
-W.I.P
+See [wiki](https://gitlab.com/dual-lab/cli/dlab-cli/wikis/home)
 
 ## Workflow tracking
 
