@@ -1,6 +1,6 @@
 # dlab-cli
 
-Git-Lab CI/CD |
+Dual-Lab CI/CD |
 :---: |
 [![pipeline status](https://gitlab.com/dual-lab/cli/dlab-cli/badges/master/pipeline.svg)](https://gitlab.com/dual-lab/cli/dlab-cli/commits/master)|
 
