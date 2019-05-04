@@ -6,12 +6,12 @@
 # &#x1F41D; bug report
 
 - **Affected package**
+  - [ ] cli
   - **bazel**
     - [ ] babel
     - [ ] typescript
     - [ ] react-lib
   - **schematics**
-    - [ ] cli
     - [ ] react
     - [ ] angular
 

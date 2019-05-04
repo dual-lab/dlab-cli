@@ -7,12 +7,12 @@
 ## Relevant Package
 
 <!-- edit -->
+- [ ] cli
 - **bazel**
   - [ ] babel
   - [ ] typescript
   - [ ] react-lib
 - **schematics**
-  - [ ] cli
   - [ ] react
   - [ ] angular
 - [x] pkgNew (&#x1F195;)
