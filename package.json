@@ -1,0 +1,10 @@
+{
+  "name": "@dual-lab/dlab-cli",
+  "version": "1.0.0",
+  "description": "Monolithic repo for my dev cli",
+  "main": "",
+  "repository": "git@gitlab.com:dual-lab/cli/dlab-cli.git",
+  "author": "dmike16 <cipmiky@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
