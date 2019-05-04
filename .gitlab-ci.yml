@@ -12,10 +12,10 @@
 image: hello-world
 
 stages:
-  -build
-  -spec
-  -staging
-  -deploy
+  - build
+  - spec
+  - staging
+  - deploy
 
 make:
   stage: build
