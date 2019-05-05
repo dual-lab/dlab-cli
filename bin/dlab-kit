@@ -1,0 +1,90 @@
+#!/usr/bin/env node
+
+// Extract root dir
+const { resolve, join } = require("path");
+const root = resolve(__dirname, '..');
+
+// Extract script command to run
+const command = process.argv.slice(2).pop() || 'info';
+
+// Simple logger
+const { Subject } = require("rxjs");
+const { filter } = require("rxjs/operators");
+const logger = {
+    _log: new Subject(),
+    ERROR: 1,
+    WARN: 2,
+    INFO: 3,
+    DEBUG: 4,
+    get $() {
+        return this._log.asObservable()
+    },
+    clean() {
+        this._log.unsubscribe();
+    },
+    log(level, message) {
+        this._log.next({ level: level, message });
+    }
+};
+const LOG_LEVEL = logger[process.env['LOG_LEVEL'] || 'INFO'] || logger.ERROR;
+
+const loggerApi = {
+    error(message) {
+        logger.log(logger.ERROR, message);
+    },
+    warn(message) {
+        logger.log(logger.WARN, message);
+    },
+    info(message) {
+        logger.log(logger.INFO, message);
+    },
+    debug(message) {
+        logger.log(logger.DEBUG, message);
+    }
+}
+
+// Main entry point
+const tsOntheFly = require("@dual-lab/tsst");
+const main = (async () => {
+    const output = process.stdout;
+
+    logger.$.pipe(filter((logO) => logO.level <= LOG_LEVEL))
+        .subscribe((logO) => {
+            let prefix = '';
+            switch (logO.level) {
+                case logger.ERROR:
+                    prefix = '+ ERROR + ';
+                    break;
+                case logger.WARN:
+                    prefix = '+ WARN + ';
+                    break;
+                case logger.INFO:
+                    prefix = '+ INFO +';
+                    break;
+                case logger.DEBUG:
+                    prefix = '+ DEBUG +';
+                    break;
+                default:
+                    prefix = '+';
+                    break;
+            }
+            output.write(`${prefix} <> ${logO.message}`);
+        });
+
+    try {
+        // instal typescript on the fly compiler
+        if(tsOntheFly().withTsConfig(join(root, 'tsconfig.json')).install() !== 0) {
+            throw new Error("Failed installing typescript on the fly compiler");
+        }
+        const cwd = require(`../scripts/${command}.cwd.ts`);
+        const code = await cwd.default(root, loggerApi);
+        process.exitCode = code;
+    } catch (err) {
+        process.stderr.write(`+ FATAL + <> command ${command} failed: ${err.message}`);
+        process.exitCode = 1;
+    } finally {
+        logger.clean();
+    }
+});
+
+main();
