@@ -24,5 +24,11 @@
         "types": [
             "node"
         ]
-    }
+    },
+    "exclude": [
+        "dist/**/*",
+        "bin/*",
+        "node_modules/**/*",
+        "tools/**/*"
+    ]
 }

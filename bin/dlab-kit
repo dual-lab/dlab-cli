@@ -44,7 +44,7 @@ const loggerApi = {
 }
 
 // Main entry point
-const tsOntheFly = require("@dual-lab/tsst");
+const tsst = require("@dual-lab/tsst");
 const main = (async () => {
     const output = process.stdout;
 
@@ -70,17 +70,16 @@ const main = (async () => {
             }
             output.write(`${prefix} <> ${logO.message}`);
         });
-
     try {
         // instal typescript on the fly compiler
-        if(tsOntheFly().withTsConfig(join(root, 'tsconfig.json')).install() !== 0) {
+        if(tsst.toolchain().withTsconfig(join(root, 'tsconfig.json')).install() !== 0) {
             throw new Error("Failed installing typescript on the fly compiler");
         }
         const cwd = require(`../scripts/${command}.cwd.ts`);
-        const code = await cwd.default(root, loggerApi);
+        const code = await cwd.default(process.argv, root, loggerApi);
         process.exitCode = code;
     } catch (err) {
-        process.stderr.write(`+ FATAL + <> command ${command} failed: ${err.message}`);
+        process.stderr.write(`+ FATAL + <> command ${command} failed: ${err.message}\n`);
         process.exitCode = 1;
     } finally {
         logger.clean();
