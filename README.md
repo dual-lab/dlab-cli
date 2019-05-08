@@ -2,7 +2,7 @@
 
 Circleci |
 :---: |
-[None|
+[![CircleCI](https://circleci.com/gh/dual-lab/dlab-cli/tree/master.svg?style=svg)](https://circleci.com/gh/dual-lab/dlab-cli/tree/master)|
 
 Utility cli used to build and initialize my node-js and ux internal projects.
 
