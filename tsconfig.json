@@ -1,0 +1,34 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "declaration": true,
+        "module": "commonjs",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "noEmitOnError": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "outDir": "./dist",
+        "rootDir": ".",
+        "strictNullChecks": true,
+        "lib": [
+            "esnext"
+        ],
+        "baseUrl": "",
+        "rootDirs": [
+            "."
+        ],
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "types": [
+            "node"
+        ]
+    },
+    "exclude": [
+        "dist/**/*",
+        "bin/*",
+        "node_modules/**/*",
+        "tools/**/*"
+    ]
+}
