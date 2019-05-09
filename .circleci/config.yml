@@ -40,7 +40,8 @@ jobs:
   setup:
     executor: node-yarn
     steps:
-      - run: echo 'TODO: circleci automation'; exit 1
+      - run: echo 'export TEST=$(echo "Am I visible in log?")' >> $BASH_ENV
+      - run: echo 'TODO circleci automation: ${TEST}'; exit 1
       - checkout
       - restore-node-dep
       - yarn-install
