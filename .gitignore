@@ -77,3 +77,19 @@ typings/
 
 #DynamoDB Local files 
 .dynamodb/ 
+
+#PnP
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+.pnp/
+
+#js in src
+dist/
+build/
+
+
+#Session vim
+*.vim
+.vim/

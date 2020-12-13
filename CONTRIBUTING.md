@@ -1,4 +1,4 @@
-# Contributing
+# Contributing (DEPRECATED -- REFACTIRING in PROGRESS)
 
 ## For feat bug-fix.
 
