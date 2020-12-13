@@ -7,22 +7,16 @@
   "author": "dmike16 <cipmiky@gmail.com>",
   "license": "MIT",
   "private": true,
+  "packages": [
+    "cli",
+    "bazel/babel",
+    "bazel/typescript",
+    "bazel/reacr-lib"
+  ],
   "devDependencies": {
-    "@dual-lab/tsst": "https://github.com/dual-lab/tsst/releases/download/v1.0.1/dual-lab-tsst-v1.0.1.tgz",
-    "@types/node": "^12.0.0",
-    "rxjs": "^6.5.1",
-    "typescript": "^3.4.5"
-  },
-  "scripts": {
-    "dlab-kit": "node ./bin/dlab-kit",
-    "info": "npm run dlab-kit info"
-  },
-  "workspaces": {
-    "packages": [
-      "cli",
-      "bazel/babel",
-      "bazel/typescript",
-      "bazel/reacr-lib"
-    ]
+    "@dual-lab/tsst": "^1.0.7",
+    "@types/node": "^14.14.13",
+    "rxjs": "^6.6.3",
+    "typescript": "^4.1.3"
   }
 }

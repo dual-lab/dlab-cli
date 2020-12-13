@@ -11,15 +11,14 @@
         "outDir": "./dist",
         "rootDir": ".",
         "strictNullChecks": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "lib": [
             "esnext"
         ],
         "baseUrl": "",
         "rootDirs": [
             "."
-        ],
-        "typeRoots": [
-            "./node_modules/@types"
         ],
         "types": [
             "node"
