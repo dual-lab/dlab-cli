@@ -53,22 +53,22 @@ const main = (async () => {
             let prefix = '';
             switch (logO.level) {
                 case logger.ERROR:
-                    prefix = '+ ERROR + ';
+                    prefix = 'ERROR';
                     break;
                 case logger.WARN:
-                    prefix = '+ WARN + ';
+                    prefix = 'WARN';
                     break;
                 case logger.INFO:
-                    prefix = '+ INFO +';
+                    prefix = 'INFO';
                     break;
                 case logger.DEBUG:
-                    prefix = '+ DEBUG +';
+                    prefix = 'DEBUG';
                     break;
                 default:
-                    prefix = '+';
+                    prefix = '';
                     break;
             }
-            output.write(`${prefix} <> ${logO.message}`);
+            output.write(`${prefix} // ${logO.message}`);
         });
     try {
         // instal typescript on the fly compiler
