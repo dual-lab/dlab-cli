@@ -93,3 +93,6 @@ build/
 #Session vim
 *.vim
 .vim/
+
+# vscode
+.vscode/
